@@ -1,3 +1,151 @@
+:root {
+  --green: hsl(115, 60%, 80%);  
+  --red: hsl(0, 60%, 80%);
+  --red-400: hsl(0, 80%, 50%);
+  --red-800: hsl(0, 80%, 30%);
+  --blue: hsl(210, 60%, 80%);
+  --blue-400: hsl(210, 80%, 50%);
+  --white: hsl(0, 0%, 100%);
+  --gray: hsl(0, 0%, 90%);
+}
+
 .App {
+  padding-inline: 2rem;
+  padding-bottom: .5rem;
+}
+
+.header {
   text-align: center;
+}
+
+.header__title {
+  font-weight: 500;
+}
+
+.budget-container {
+  display: grid;
+  gap: .5rem;
+}
+
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  padding-inline: 1rem;
+  border-radius: .25rem;
+}
+
+.budget-item__edit {
+  text-transform: capitalize;
+  font-size: .7rem;
+
+}
+
+.budget-item__edit,
+.budget-item__input {
+  padding: .3rem 1rem;
+}
+
+.expenses__list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.expenses__item {
+  --border: 2px solid rgb(201, 201, 201);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: var(--border);
+  border-bottom: none;
+  padding: .5rem;
+}
+
+.expenses__item:last-child {
+  border-bottom: var(--border);
+}
+
+.expenses__cost {
+  border-radius: 1rem;
+  padding: .2rem;
+  color: var(--white);
+  background-color: var(--blue-400);
+}
+
+.expenses__delete {
+  width: 2rem;
+  height: auto;
+}
+
+.form,
+.form__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__column {
+  margin-bottom: .5rem;
+}
+
+.form__input {
+  padding-block: .4rem;
+  border: solid var(--gray);
+  border-radius: .25rem;
+}
+
+.form__submit {
+  font-size: 1rem;
+  padding: .5rem 2rem;
+}
+
+.budget-item__edit,
+.form__submit {
+  color: var(--white);
+  background-color: var(--blue-400);
+  border: transparent;
+  border-radius: 1rem;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.bg-success {
+  background-color: var(--green);
+}
+
+.bg-danger {
+  background-color: var(--red);
+}
+
+.bg-danger-400 {
+  background-color: var(--red-400);
+}
+
+.bg-danger-800 {
+  background-color: var(--red-800);
+}
+
+.bg-info {
+  background-color: var(--blue);
+}
+
+@media screen and (min-width: 768px) {
+  .budget-container {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+  .form {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  .form__column {
+    flex-grow: 1;
+  }
+  .form__submit {
+    height: min-content;
+    margin-top: 1rem;
+  }
 }
